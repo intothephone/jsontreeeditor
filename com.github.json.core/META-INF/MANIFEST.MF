@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Json model
+Bundle-SymbolicName: com.github.json.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.github.json.core.Activator
+Bundle-Vendor: GITHUB
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

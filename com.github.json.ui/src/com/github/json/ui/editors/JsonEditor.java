@@ -8,6 +8,8 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.EditorPart;
 
 import com.github.json.ui.control.JsonTreeViewer;
+import com.github.json.ui.providers.JsonContentProvider;
+import com.github.json.ui.providers.JsonLabelProvider;
 
 public class JsonEditor extends EditorPart {
 	
@@ -50,6 +52,8 @@ public class JsonEditor extends EditorPart {
 	@Override
 	public void createPartControl(Composite parent) {
 		viewer = new JsonTreeViewer(parent);
+		viewer.setContentProvider(new JsonContentProvider());
+		viewer.setLabelProvider(new JsonLabelProvider());
 	}
 
 	@Override

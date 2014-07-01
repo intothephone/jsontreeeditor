@@ -1,20 +1,61 @@
 package com.github.json.ui.editors;
 
-import org.eclipse.ui.editors.text.TextEditor;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.part.EditorPart;
 
-public class JsonEditor extends TextEditor {
+import com.github.json.ui.control.JsonTreeViewer;
 
-	private ColorManager colorManager;
+public class JsonEditor extends EditorPart {
+	
+	private JsonTreeViewer viewer;
 
 	public JsonEditor() {
-		super();
-		colorManager = new ColorManager();
-		setSourceViewerConfiguration(new XMLConfiguration(colorManager));
-		setDocumentProvider(new XMLDocumentProvider());
 	}
-	public void dispose() {
-		colorManager.dispose();
-		super.dispose();
+
+	@Override
+	public void doSave(IProgressMonitor monitor) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void doSaveAs() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void init(IEditorSite site, IEditorInput input)
+			throws PartInitException {
+		setSite(site);
+		setInput(input);
+	}
+
+	@Override
+	public boolean isDirty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isSaveAsAllowed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void createPartControl(Composite parent) {
+		viewer = new JsonTreeViewer(parent);
+	}
+
+	@Override
+	public void setFocus() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

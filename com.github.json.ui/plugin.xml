@@ -7,7 +7,7 @@
       <editor
             name="Json Editor"
             extensions="json"
-            icon="icons/sample.gif"
+            icon="icons/json16.jpeg"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             class="com.github.json.ui.editors.JsonEditor"
             id="com.github.json.ui.editors.JsonEditor">

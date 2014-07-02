@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            name="Json Editor"
+            extensions="json"
+            icon="icons/json16.jpeg"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            class="com.github.json.ui.editors.JsonEditor"
+            id="com.github.json.ui.editors.JsonEditor">
+      </editor>
+   </extension>
+
+</plugin>

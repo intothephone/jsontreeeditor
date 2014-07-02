@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Json model
+Bundle-SymbolicName: com.github.json.core
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.github.json.core.Activator
+Bundle-Vendor: GITHUB
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .,
+ lib/jackson-core-2.4.1.jar,
+ lib/jackson-databind-2.4.1.jar
+Export-Package: com.fasterxml.jackson.databind,
+ com.fasterxml.jackson.databind.node,
+ com.github.json.core.exception,
+ com.github.json.core.model

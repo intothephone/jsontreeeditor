@@ -3,6 +3,8 @@ package com.github.json.ui.providers;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
+import com.github.json.core.model.INodeElement;
+
 public class JsonContentProvider implements ITreeContentProvider {
 
 	@Override
@@ -19,26 +21,32 @@ public class JsonContentProvider implements ITreeContentProvider {
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		// TODO Auto-generated method stub
-		return null;
+		return getChildren(inputElement);
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
-		// TODO Auto-generated method stub
-		return null;
+		if(parentElement instanceof INodeElement){
+			INodeElement parent = (INodeElement)parentElement;
+			return parent.getChildNodes().toArray(new INodeElement[0]);
+		} else {
+			return new Object[0];
+		}
 	}
 
 	@Override
 	public Object getParent(Object element) {
-		// TODO Auto-generated method stub
-		return null;
+		if(element instanceof INodeElement){
+			INodeElement ele = (INodeElement)element;
+			return ele.getParentNode();
+		} else {
+			return null;
+		}
 	}
 
 	@Override
 	public boolean hasChildren(Object element) {
-		// TODO Auto-generated method stub
-		return false;
+		return getChildren(element).length > 0;
 	}
 
 }

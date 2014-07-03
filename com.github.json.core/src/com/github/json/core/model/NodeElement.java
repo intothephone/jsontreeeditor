@@ -1,6 +1,9 @@
 package com.github.json.core.model;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -12,13 +15,17 @@ public class NodeElement implements INodeElement{
 	
 	private INodeElement parent;
 	
-	private INodeElement[] childNodes;
+	private Map<String, INodeElement> childNodes;
 	
 
 	public NodeElement(JsonNode node, INodeElement parent) {
 		super();
 		this.node = node;
 		this.parent = parent;
+		if(parent != null){
+			parent.addChildNode(this);
+		}
+		childNodes = new HashMap<String, INodeElement>();
 	}
 
 	@Override
@@ -27,8 +34,8 @@ public class NodeElement implements INodeElement{
 	}
 
 	@Override
-	public INodeElement[] getChildNodes() {
-		return childNodes;
+	public Collection<INodeElement> getChildNodes() {
+		return childNodes.values();
 	}
 
 	@Override
@@ -73,6 +80,16 @@ public class NodeElement implements INodeElement{
 	@Override
 	public String getValue() {
 		return getNode().asText();
+	}
+
+	@Override
+	public void addChildNode(INodeElement child) {
+		childNodes.put(child.getKey(), child);
+	}
+
+	@Override
+	public void removeChildNode(String key) {
+		childNodes.remove(key);
 	}
 	
 }

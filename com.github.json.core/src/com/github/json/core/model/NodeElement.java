@@ -17,9 +17,12 @@ public class NodeElement implements INodeElement{
 	
 	private Map<String, INodeElement> childNodes;
 	
+	private String key;
+	
 
-	public NodeElement(JsonNode node, INodeElement parent) {
+	public NodeElement(String key, JsonNode node, INodeElement parent) {
 		super();
+		this.key = key;
 		this.node = node;
 		this.parent = parent;
 		if(parent != null){
@@ -66,7 +69,7 @@ public class NodeElement implements INodeElement{
 
 	@Override
 	public String getKey() {
-		if(parent != null){
+		/*if(parent != null){
 			for(Iterator<Entry<String, JsonNode>> it = parent.getNode().fields(); it.hasNext();){
 				Entry<String, JsonNode> e = it.next();
 				if(getNode().equals(e.getValue())){
@@ -74,7 +77,8 @@ public class NodeElement implements INodeElement{
 				}
 			}
 		}
-		return null;
+		return null;*/
+		return key;
 	}
 
 	@Override

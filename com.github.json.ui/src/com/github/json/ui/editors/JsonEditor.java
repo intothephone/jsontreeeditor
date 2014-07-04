@@ -50,7 +50,7 @@ public class JsonEditor extends EditorPart {
 			InputStream is = null;
 			try {
 				IFile file = ((IFileEditorInput)input).getFile();
-				site.
+				setPartName(file.getName());
 				is = file.getContents();
 				root = ModelUtils.constructModel(is);
 			} catch (Exception e) {
@@ -83,6 +83,7 @@ public class JsonEditor extends EditorPart {
 		viewer = new JsonTreeViewer(parent, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL);
 		viewer.setContentProvider(new JsonContentProvider());
 		viewer.setLabelProvider(new JsonLabelProvider());
+		viewer.getTree().setHeaderVisible(true);
 		viewer.addColumns();
 		if(root != null){
 			viewer.setInput(root);

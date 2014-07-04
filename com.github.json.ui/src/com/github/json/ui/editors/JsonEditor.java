@@ -6,12 +6,14 @@ import java.io.InputStream;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.dialogs.PatternFilter;
 import org.eclipse.ui.part.EditorPart;
 
 import com.github.json.core.model.INodeElement;
@@ -22,7 +24,7 @@ import com.github.json.ui.providers.JsonLabelProvider;
 
 public class JsonEditor extends EditorPart {
 
-    private JsonTreeViewer viewer;
+    private JsonTreeViewer editor;
 
     private INodeElement root;
 
@@ -79,12 +81,14 @@ public class JsonEditor extends EditorPart {
 
     @Override
     public void createPartControl(Composite parent) {
-        viewer = new JsonTreeViewer(parent, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.LINE_DASH);
+        editor = new JsonTreeViewer(parent, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.LINE_DASH, new PatternFilter(), true);
+        editor.setInitialText("type the xpath");
+        TreeViewer viewer = editor.getViewer();
         viewer.setContentProvider(new JsonContentProvider());
         viewer.setLabelProvider(new JsonLabelProvider());
         viewer.getTree().setHeaderVisible(true);
         viewer.getTree().setLinesVisible(true);
-        viewer.addColumns();
+        editor.addColumns();
         if (root != null) {
             viewer.setInput(root);
         }

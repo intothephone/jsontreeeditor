@@ -21,79 +21,79 @@ import com.github.json.ui.providers.JsonContentProvider;
 import com.github.json.ui.providers.JsonLabelProvider;
 
 public class JsonEditor extends EditorPart {
-	
-	private JsonTreeViewer viewer;
-	
-	private INodeElement root;
 
-	public JsonEditor() {
-	}
+    private JsonTreeViewer viewer;
 
-	@Override
-	public void doSave(IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
-		
-	}
+    private INodeElement root;
 
-	@Override
-	public void doSaveAs() {
-		// TODO Auto-generated method stub
-		
-	}
+    public JsonEditor() {
+    }
 
-	@Override
-	public void init(IEditorSite site, IEditorInput input)
-			throws PartInitException {
-		setSite(site);
-		setInput(input);
-		if(input instanceof IFileEditorInput){
-			InputStream is = null;
-			try {
-				IFile file = ((IFileEditorInput)input).getFile();
-				setPartName(file.getName());
-				is = file.getContents();
-				root = ModelUtils.constructModel(is);
-			} catch (Exception e) {
-				MessageDialog.openError(site.getWorkbenchWindow().getShell(), "Parse Json", e.getMessage());
-			} finally {
-				if(is != null){
-					try {
-						is.close();
-					} catch (IOException e) {
-					}
-				}
-			}
-		}
-	}
+    @Override
+    public void doSave(IProgressMonitor monitor) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public boolean isDirty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    }
 
-	@Override
-	public boolean isSaveAsAllowed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public void doSaveAs() {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void createPartControl(Composite parent) {
-		viewer = new JsonTreeViewer(parent, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL);
-		viewer.setContentProvider(new JsonContentProvider());
-		viewer.setLabelProvider(new JsonLabelProvider());
-		viewer.getTree().setHeaderVisible(true);
-		viewer.addColumns();
-		if(root != null){
-			viewer.setInput(root);
-		}
-	}
+    }
 
-	@Override
-	public void setFocus() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void init(IEditorSite site, IEditorInput input) throws PartInitException {
+        setSite(site);
+        setInput(input);
+        if (input instanceof IFileEditorInput) {
+            InputStream is = null;
+            try {
+                IFile file = ((IFileEditorInput) input).getFile();
+                setPartName(file.getName());
+                is = file.getContents();
+                root = ModelUtils.constructModel(is);
+            } catch (Exception e) {
+                MessageDialog.openError(site.getWorkbenchWindow().getShell(), "Parse Json", e.getMessage());
+            } finally {
+                if (is != null) {
+                    try {
+                        is.close();
+                    } catch (IOException e) {
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public boolean isDirty() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean isSaveAsAllowed() {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public void createPartControl(Composite parent) {
+        viewer = new JsonTreeViewer(parent, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL | SWT.LINE_DASH);
+        viewer.setContentProvider(new JsonContentProvider());
+        viewer.setLabelProvider(new JsonLabelProvider());
+        viewer.getTree().setHeaderVisible(true);
+        viewer.getTree().setLinesVisible(true);
+        viewer.addColumns();
+        if (root != null) {
+            viewer.setInput(root);
+        }
+    }
+
+    @Override
+    public void setFocus() {
+        // TODO Auto-generated method stub
+
+    }
 
 }

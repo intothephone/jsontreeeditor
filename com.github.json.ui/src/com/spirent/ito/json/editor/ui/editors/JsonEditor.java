@@ -1,4 +1,4 @@
-package com.github.json.ui.editors;
+package com.spirent.ito.json.editor.ui.editors;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,11 +16,11 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.dialogs.PatternFilter;
 import org.eclipse.ui.part.EditorPart;
 
-import com.github.json.core.model.INodeElement;
-import com.github.json.core.util.ModelUtils;
-import com.github.json.ui.control.JsonTreeViewer;
-import com.github.json.ui.providers.JsonContentProvider;
-import com.github.json.ui.providers.JsonLabelProvider;
+import com.spirent.ito.json.editor.core.model.INodeElement;
+import com.spirent.ito.json.editor.core.util.ModelUtils;
+import com.spirent.ito.json.editor.ui.control.JsonTreeViewer;
+import com.spirent.ito.json.editor.ui.providers.JsonContentProvider;
+import com.spirent.ito.json.editor.ui.providers.JsonLabelProvider;
 
 public class JsonEditor extends EditorPart {
 

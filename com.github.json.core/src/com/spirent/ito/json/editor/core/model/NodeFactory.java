@@ -1,4 +1,4 @@
-package com.github.json.core.model;
+package com.spirent.ito.json.editor.core.model;
 
 import com.fasterxml.jackson.databind.JsonNode;
 

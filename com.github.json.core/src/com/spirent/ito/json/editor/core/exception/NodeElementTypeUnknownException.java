@@ -1,4 +1,4 @@
-package com.github.json.core.exception;
+package com.spirent.ito.json.editor.core.exception;
 
 public class NodeElementTypeUnknownException extends Exception {
 

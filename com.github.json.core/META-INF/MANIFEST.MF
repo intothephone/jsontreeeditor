@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Json model
-Bundle-SymbolicName: com.github.json.core
+Bundle-SymbolicName: com.spirent.ito.json.editor.core
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.github.json.core.Activator
+Bundle-Activator: com.spirent.ito.json.editor.core.Activator
 Bundle-Vendor: GITHUB
 Require-Bundle: org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
@@ -14,6 +14,6 @@ Bundle-ClassPath: .,
  lib/jackson-annotations-2.4.1.jar
 Export-Package: com.fasterxml.jackson.databind,
  com.fasterxml.jackson.databind.node,
- com.github.json.core.exception,
- com.github.json.core.model,
- com.github.json.core.util
+ com.spirent.ito.json.editor.core.exception,
+ com.spirent.ito.json.editor.core.model,
+ com.spirent.ito.json.editor.core.util

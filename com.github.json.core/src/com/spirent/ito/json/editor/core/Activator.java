@@ -1,4 +1,4 @@
-package com.github.json.core;
+package com.spirent.ito.json.editor.core;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

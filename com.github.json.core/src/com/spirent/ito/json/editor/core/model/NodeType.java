@@ -1,4 +1,4 @@
-package com.github.json.core.model;
+package com.spirent.ito.json.editor.core.model;
 
 public enum NodeType {
 	ARRAY,

@@ -1,4 +1,4 @@
-package com.github.json.ui;
+package com.spirent.ito.json.editor.ui;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;

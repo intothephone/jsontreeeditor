@@ -1,4 +1,4 @@
-package com.github.json.core.util;
+package com.spirent.ito.json.editor.core.util;
 
 import java.io.InputStream;
 import java.util.Iterator;
@@ -8,8 +8,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeType;
-import com.github.json.core.model.INodeElement;
-import com.github.json.core.model.NodeFactory;
+import com.spirent.ito.json.editor.core.model.INodeElement;
+import com.spirent.ito.json.editor.core.model.NodeFactory;
 
 public class ModelUtils {
 	public static INodeElement constructModel(InputStream is) throws Exception{

@@ -1,4 +1,4 @@
-package com.github.json.ui.control;
+package com.spirent.ito.json.editor.ui.control;
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;

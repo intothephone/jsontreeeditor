@@ -1,9 +1,9 @@
-package com.github.json.ui.providers;
+package com.spirent.ito.json.editor.ui.providers;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
 
-import com.github.json.core.model.INodeElement;
+import com.spirent.ito.json.editor.core.model.INodeElement;
 
 public class JsonContentProvider implements ITreeContentProvider {
 

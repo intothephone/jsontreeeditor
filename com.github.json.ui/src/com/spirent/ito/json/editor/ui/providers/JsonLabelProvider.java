@@ -1,11 +1,11 @@
-package com.github.json.ui.providers;
+package com.spirent.ito.json.editor.ui.providers;
 
 import org.eclipse.jface.viewers.BaseLabelProvider;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
 
-import com.github.json.core.model.INodeElement;
+import com.spirent.ito.json.editor.core.model.INodeElement;
 
 public class JsonLabelProvider extends BaseLabelProvider implements ITableLabelProvider, ILabelProvider {
 

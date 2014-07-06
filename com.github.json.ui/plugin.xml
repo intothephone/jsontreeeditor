@@ -9,7 +9,7 @@
             extensions="json"
             icon="icons/json16.jpeg"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
-            class="com.github.json.ui.editors.JsonEditor"
+            class="com.spirent.ito.json.editor.ui.editors.JsonEditor"
             id="com.github.json.ui.editors.JsonEditor">
       </editor>
    </extension>

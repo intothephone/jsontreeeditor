@@ -1,15 +1,15 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Json Editor UI
-Bundle-SymbolicName: com.github.json.ui;singleton:=true
+Bundle-SymbolicName: com.spirent.ito.json.editor.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.github.json.ui.Activator
+Bundle-Activator: com.spirent.ito.json.editor.ui.Activator
 Bundle-Vendor: GITHUB
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.jface.text,
  org.eclipse.ui.editors,
- com.github.json.core,
+ com.spirent.ito.json.editor.core,
  org.eclipse.ui.ide,
  org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

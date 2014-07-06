@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Json Editor Unit Test
-Bundle-SymbolicName: com.github.json.core.test
+Bundle-SymbolicName: com.spirent.ito.json.editor.core.test
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: com.github.json.core.test.Activator
+Bundle-Activator: com.spirent.json.editor.core.test.Activator
 Bundle-Vendor: GITHUB
 Require-Bundle: org.eclipse.core.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

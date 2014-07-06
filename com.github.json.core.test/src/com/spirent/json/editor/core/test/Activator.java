@@ -1,4 +1,4 @@
-package com.github.json.core.test;
+package com.spirent.json.editor.core.test;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
